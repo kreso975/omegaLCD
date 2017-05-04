@@ -40,7 +40,7 @@ define Package/omegaLCD
 endef
 
 define Package/omegaLCD/description
-NEED DESCRIPTION
+	App for controling 2x16 LCD on Omega2
 endef
 
 # Specify what needs to be done to prepare for building the package.
