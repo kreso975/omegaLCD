@@ -1,5 +1,5 @@
 ##############################################
-# OpenWrt Makefile for hellocpp program
+# OpenWrt Makefile for omegaLCD program
 #
 #
 # Most of the variables used here are defined in
