@@ -59,11 +59,11 @@ inline static void waitUsec(uint16_t uSec) {
 #define FOUR_BITS               2
 
 
-#define HOME_CLEAR_EXEC      2000
+#define HOME_CLEAR_EXEC         2000
 
-#define BACKLIGHT_OFF         0x00
+#define BACKLIGHT_OFF           0x00
 
-#define BACKLIGHT_ON          0x08
+#define BACKLIGHT_ON            0x08
 
 typedef enum {
     POSITIVE, NEGATIVE

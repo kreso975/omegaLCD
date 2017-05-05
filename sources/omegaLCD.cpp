@@ -36,7 +36,7 @@ int main( int argc, char* argv[] )
 {
     I2CAccess * i2cAcc;                 // For general I2C Access
     I2CDevice * lcdDevice;              // Specific I2C Device
-    LCD_I2C * lcd;                  // The LCD Display
+    LCD_I2C * lcd;                      // The LCD Display
     
     // Create and setup I2C Access on channel 0 - the only channel the Omega has
     i2cAcc = new I2CAccessSystem(0);
