@@ -108,20 +108,14 @@ void LCD::setCursor( uint8_t col, uint8_t row )
     const uint8_t row_offsetsLarge[] = {0x00, 0x40, 0x10, 0x50};    // For 16x4 LCDs
 
     if ( row >= _numlines )
-    {
-        row = _numlines - 1; // rows start at 0
-    }
+        row = _numlines - 1;                                        // rows start at 0
 
     // 16x4 LCDs have special memory map layout
     // ----------------------------------------
-    if (_cols == 16 && _numlines == 4)
-    {
-        command(LCD_SETDDRAMADDR | (col + row_offsetsLarge[row]));
-    }
+    if ( _cols == 16 && _numlines == 4 )
+        command( LCD_SETDDRAMADDR | (col + row_offsetsLarge[row]) );
     else
-    {
-        command(LCD_SETDDRAMADDR | (col + row_offsetsDef[row]));
-    }
+        command( LCD_SETDDRAMADDR | (col + row_offsetsDef[row]) );
 
 }
 
