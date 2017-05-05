@@ -18,7 +18,7 @@ $(TARGET): $(OBJECTS)
 	$(CXX) $(LDFLAGS) -o $(TARGET) $(OBJECTS)
 
 # Compile sources 
-build/%.o: ./headers/%.cpp
+build/%.o: ./sources/%.cpp
 	$(CXX) $(CCFLAGS) $(INC) $< -o $@
 
 # Remove all created files
