@@ -30,13 +30,3 @@ clean:
 precomp:
 	@mkdir -p build
 	@mkdir -p dist
-
-#omegaLCD: i2clcd16x2.o
-#	$(CXX) $(LDFLAGS) i2clcd16x2.o -o omegaLCD
-
-#i2clcd16x2.o: i2clcd16x2.cpp
-#	$(CXX) $(CXXLAGS) -c i2clcd16x2.cpp
-
-# remove object files and executable when user executes "make clean"
-#clean:
-#	rm *.o i2clcd16x2
