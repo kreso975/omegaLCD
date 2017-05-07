@@ -28,8 +28,8 @@ static void show_usage( std::string argv )
 				<< "\t-c,--clear\t\tClear LCD screen\n"
 				<< "\t-b,--backliteOff\tLCD backlite Off\n"
 				<< "\t-B,--backliteOn\t\tLCD backlite On\n"
-                << "\t-sl,--scrolleft\tScroll the display without changing the RAM\n"
-                << "\t-sr,--scrolright\t\tScroll the display without changing the RAMn\n"
+                << "\t-sl,--scrolleft\t\tScroll the display without changing the RAM\n"
+                << "\t-sr,--scrolright\tScroll the display without changing the RAMn\n"
 				<< "\t-w,--write\t\tWrite on LCD - [<STRING> and or <STRING>]\n"
 				<< std::endl;
 }
@@ -93,7 +93,16 @@ int main( int argc, char* argv[] )
 			{
 				lcd->setCursor( 0,1 ); // Position LCD cursor to start of second row
 				lcd->print( argv[3] ); // Output second input parameter to second row of LCD
-			}		
+			}
+
+            // Let's play a bit
+            sleep(5);
+            lcd->noBacklight();
+            sleep(5);
+            lcd->backlight();
+            sleep(5);
+            lcd->scrollDisplayRight();
+
 		}	
 	}
 	else
