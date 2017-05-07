@@ -28,6 +28,8 @@ static void show_usage( std::string argv )
 				<< "\t-c,--clear\t\tClear LCD screen\n"
 				<< "\t-b,--backliteOff\tLCD backlite Off\n"
 				<< "\t-B,--backliteOn\t\tLCD backlite On\n"
+                << "\t-sl,--scrolleft\tScroll the display without changing the RAM\n"
+                << "\t-sr,--scrolright\t\tScroll the display without changing the RAMn\n"
 				<< "\t-w,--write\t\tWrite on LCD - [<STRING> and or <STRING>]\n"
 				<< std::endl;
 }
@@ -68,7 +70,13 @@ int main( int argc, char* argv[] )
 	
 		else if ( ( arg == "-B" ) || ( arg == "--backliteOn" ) )
 			lcd->backlight();
-		
+
+        else if ( ( arg == "-sl" ) || ( arg == "--scrolleft" ) )
+            lcd->scrollDisplayLeft();
+
+        else if ( ( arg == "-sr" ) || ( arg == "--scrolright" ) )
+            lcd->scrollDisplayRight();
+
 		else if ( ( arg == "-w" ) || ( arg == "--write" ) )
 		{
 			if ( argv[2] )
