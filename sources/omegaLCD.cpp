@@ -24,13 +24,14 @@ static void show_usage( std::string argv )
 {
 	std::cerr 	<< "Usage: <option> [<STRING> <STRING>]\n"
 				<< "Options:\n"
-				<< "\t-h,--help\t\tShow this help message\n"
-				<< "\t-c,--clear\t\tClear LCD screen\n"
-				<< "\t-b,--backliteOff\tLCD backlite Off\n"
-				<< "\t-B,--backliteOn\t\tLCD backlite On\n"
+                << "\t-i, --init\t\tInitialize LCD\n"
+				<< "\t-h, --help\t\tShow this help message\n"
+				<< "\t-c, --clear\t\tClear LCD screen\n"
+				<< "\t-b, --backliteOff\tLCD backlite Off\n"
+				<< "\t-B, --backliteOn\t\tLCD backlite On\n"
                 << "\t-sl,--scrolleft\t\tScroll the display without changing the RAM\n"
                 << "\t-sr,--scrolright\tScroll the display without changing the RAMn\n"
-				<< "\t-w,--write\t\tWrite on LCD - [<STRING> and or <STRING>]\n"
+				<< "\t-w, --write\t\tWrite on LCD - [<STRING> and or <STRING>]\n"
 				<< std::endl;
 }
 
@@ -48,20 +49,21 @@ int main( int argc, char* argv[] )
     
     // Create the LCD with access via the I2C Device using the specific data for the actual LCD
     lcd = new LCD_I2C(lcdDevice,En_pin,Rw_pin,Rs_pin,D4_pin,D5_pin,D6_pin,D7_pin, BACKLIGHT_PIN, BACKLIGHT_POLARITY);
-
-    // Initialise the LCD for columns and rows
-    lcd->begin(LCD_NUM_COL, LCD_NUM_ROW);
-
-    // Position LCD cursor to start of first row
-    lcd->setCursor( 0,0 );
-    	
 	
 	if ( argc > 1 )
 	{	
 		std::string arg = argv[1];
 		if ( ( arg == "-h" ) || ( arg == "--help" ) )
 			show_usage(argv[0]); // Show help
-	
+
+        else if ( ( arg == "-i" ) || ( arg == "--init" ) )
+        {
+            // Initialise the LCD for columns and rows
+            lcd->begin(LCD_NUM_COL, LCD_NUM_ROW);
+
+            // Position LCD cursor to start of first row
+            lcd->setCursor( 0,0 );
+        }
 		else if ( ( arg == "-c" ) || ( arg == "--clear" ) )
 			lcd->clear(); // Clear LCD - set cursor position to zero
 	
