@@ -54,7 +54,7 @@ int main( int argc, char* argv[] )
     lcd->begin(LCD_NUM_COL, LCD_NUM_ROW);
 
     // Position LCD cursor to start of first row
-    lcd->setCursor( 0,0 );
+
 
     if ( argc > 1 )
 	{	
@@ -64,7 +64,7 @@ int main( int argc, char* argv[] )
 
         else if ( ( arg == "-i" ) || ( arg == "--init" ) )
         {
-
+            lcd->setCursor( 0,0 );
         }
 		else if ( ( arg == "-c" ) || ( arg == "--clear" ) )
 			lcd->clear(); // Clear LCD - set cursor position to zero

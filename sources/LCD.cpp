@@ -83,7 +83,7 @@ void LCD::begin( uint8_t cols, uint8_t lines, uint8_t dotsize )
     // set the entry mode
     command(LCD_ENTRYMODESET | _displaymode);
 
-    //backlight();
+    backlight();
 
 }
 
