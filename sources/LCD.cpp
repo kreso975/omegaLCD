@@ -76,14 +76,14 @@ void LCD::begin( uint8_t cols, uint8_t lines, uint8_t dotsize )
     display();
 
     // clear the LCD
-    clear();
+    //clear();
 
     // Initialize to default text direction (for romance languages)
     _displaymode = LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT;
     // set the entry mode
     command(LCD_ENTRYMODESET | _displaymode);
 
-    backlight();
+    //backlight();
 
 }
 

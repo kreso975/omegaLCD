@@ -49,8 +49,14 @@ int main( int argc, char* argv[] )
     
     // Create the LCD with access via the I2C Device using the specific data for the actual LCD
     lcd = new LCD_I2C(lcdDevice,En_pin,Rw_pin,Rs_pin,D4_pin,D5_pin,D6_pin,D7_pin, BACKLIGHT_PIN, BACKLIGHT_POLARITY);
-	
-	if ( argc > 1 )
+
+    // Initialise the LCD for columns and rows
+    lcd->begin(LCD_NUM_COL, LCD_NUM_ROW);
+
+    // Position LCD cursor to start of first row
+    lcd->setCursor( 0,0 );
+
+    if ( argc > 1 )
 	{	
 		std::string arg = argv[1];
 		if ( ( arg == "-h" ) || ( arg == "--help" ) )
@@ -58,11 +64,7 @@ int main( int argc, char* argv[] )
 
         else if ( ( arg == "-i" ) || ( arg == "--init" ) )
         {
-            // Initialise the LCD for columns and rows
-            lcd->begin(LCD_NUM_COL, LCD_NUM_ROW);
 
-            // Position LCD cursor to start of first row
-            lcd->setCursor( 0,0 );
         }
 		else if ( ( arg == "-c" ) || ( arg == "--clear" ) )
 			lcd->clear(); // Clear LCD - set cursor position to zero
