@@ -98,15 +98,6 @@ int main( int argc, char* argv[] )
 				lcd->setCursor( 0,1 ); // Position LCD cursor to start of second row
 				lcd->print( argv[3] ); // Output second input parameter to second row of LCD
 			}
-
-            // Let's play a bit
-            sleep(5);
-            lcd->noBacklight();
-            sleep(5);
-            lcd->backlight();
-            sleep(5);
-            lcd->scrollDisplayRight();
-
 		}	
 	}
 	else
