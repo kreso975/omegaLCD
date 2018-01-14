@@ -73,7 +73,7 @@ void LCD::begin( uint8_t cols, uint8_t lines, uint8_t dotsize )
 
     // turn the display on with no cursor or blinking default
     _displaycontrol = LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;
-    //display();
+    display();
 
     // clear the LCD
     //clear();
